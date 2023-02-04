@@ -33,7 +33,7 @@ def module_init():
     qrpopover.set_position(Gtk.PositionType.BOTTOM)
     button = Gtk.MenuButton(label="QR", popover=qrpopover)
     button.connect("clicked",_qrkod_button_event)
-    loginwindow.o("ui_box_bottom_right").pack_end(button, False, True, 10)
+    loginwindow.o("ui_box_bottom_left").pack_end(button, False, True, 10)
     button.get_style_context().add_class("icon")
     button.show_all()
     qrimage.show()
