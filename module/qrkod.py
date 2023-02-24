@@ -9,23 +9,23 @@ def _qrkod_button_event(widget=None):
 
 @asynchronous
 def qrkod_control_event():
-    if os.path.isfile("/tmp/qrkod.png"):
+    if os.path.isfile("/tmp/qrkod.svg"):
         return
     lan_ip = ""
     for ip, dev in get_local_ip():
         lan_ip += "http://{}:8080\n".format(ip)
     qr = pyqrcode.create(lan_ip.strip())
-    qr.svg("/tmp/qrkod.png", scale=6)
+    qr.svg("/tmp/qrkod.svg",scale=8, background="white", module_color="#000000")
     
     #img = qrcode.make(lan_ip.strip())
     #type(img)  # qrcode.image.pil.PilImage
     #img.save("/tmp/qrkod.png")
 
 def update_qr_image():
-    if not os.path.isfile("/tmp/qrkod.png"):
+    if not os.path.isfile("/tmp/qrkod.svg"):
         GLib.timeout_add(500,update_qr_image)
         return
-    qrimage.set_from_file("/tmp/qrkod.png")
+    qrimage.set_from_file("/tmp/qrkod.svg")
 
 def module_init():
     global qrpopover
