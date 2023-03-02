@@ -10,6 +10,7 @@ def _qrkod_button_event(widget=None):
     global ip_label_text
     ip_label_text=_("Loading...")
     #loginwindow.o("ui_popover_network").popup()
+    os.system("rm /tmp/qrkod.png")
     qrpopover.popup()
     qrcode_control_event()
 
