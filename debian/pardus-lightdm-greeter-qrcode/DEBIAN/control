@@ -1,7 +1,7 @@
 Package: pardus-lightdm-greeter-qrcode
-Version: 1.0
+Version: 1.1
 Architecture: all
-Maintainer: Ali Riza KESKIN <aliriza.keskin@pardus.org.tr>
+Maintainer: bayramkarahan <bayramk@gmail.com>
 Installed-Size: 19
 Depends: pardus-lightdm-greeter, python3-qrcode
 Section: misc
